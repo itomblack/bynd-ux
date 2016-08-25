@@ -1,0 +1,58 @@
+//===============================================================================
+// TYPOGRAPHY
+//===============================================================================
+
+body, html {
+	font-family: 'Cormorant Garamond', serif;
+	text-align: center;
+	font-size: 16px;
+}
+
+h1, h2, h3 {
+	line-height: 1.3em;
+	font-weight: 500;
+	margin: 1em 0 0 0;
+}
+
+h1 {
+	font-size: 3.157em;
+	color: $l-green;
+	margin: .5em 0 0 0;
+	line-height: 1.1em;
+}
+
+h2 {
+	font-size: 1.777em;
+	color: $d-green;
+}
+
+h3 {
+	font-size: 1.333em;
+	color: $m-green;
+}
+
+p {
+	font-family: 'Open sans', helvetica, arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: .5em auto 1em auto;
+	color: $ink;
+	max-width: 650px;
+}
+
+a {
+	text-decoration: none;
+	color: $m-green;
+	transition: all $short ease;
+
+	&:hover {
+		color: $d-green;
+		transform: scale(1.1);
+	}
+}
+
+.bot-marg-1 { margin-bottom: 1em; }
+
+.underline-dash { border-bottom: 1px dashed white; }
+
+

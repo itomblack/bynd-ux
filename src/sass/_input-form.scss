@@ -1,0 +1,208 @@
+//===============================================================================
+// Input form
+//===============================================================================
+
+
+/* general style for the form */
+.nl-form {
+	width: 100%;
+	font-size: 1.333em;
+	color: white;
+	margin: 1em 0;
+}
+
+.nl-form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* normalize the input elements, make them look like everything else */
+.nl-form input,
+.nl-form select,
+.nl-form button {
+	border: none;
+	background: transparent;
+	font-family: inherit;
+	color: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+.nl-form input:focus {
+	outline: none;
+}
+
+/* custom field (drop-down, text element) styling  */
+.nl-field {
+	display: inline-block;
+	position: relative;
+}
+
+.nl-field.nl-field-open {
+	z-index: 10000;
+}
+
+/* the toggle is the visible part in the form */
+.nl-field-toggle,
+.nl-form input,
+.nl-form select  {
+	line-height: inherit;
+	display: inline-block;
+	color: $yellow;
+	cursor: pointer;
+	border-bottom: 1px dashed $yellow;
+
+	&:hover {
+		color: white;
+	}
+}
+
+/* drop-down list / text element */
+.nl-field ul {
+	position: absolute;
+	visibility: hidden;
+	background: $l-green;
+	color: $m-green;
+	left: -0.5em;
+	top: 50%;
+	opacity: 0;
+	transform: translateY(-40%) scale(0.9);
+	transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.nl-field.nl-field-open ul {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(-50%) scale(1);
+	transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
+	padding: .5em;
+}
+
+.nl-field ul li {
+	color: #fff;
+	position: relative;
+
+	&:hover {	color: $yellow;	}
+}
+
+.nl-dd ul li {
+	padding: 0.1em 1em;
+	cursor: pointer;
+	white-space: nowrap;
+	
+	&:hover {	color: $yellow;	}
+}
+
+.nl-dd ul li.nl-dd-checked {
+	color: $yellow;
+	
+	&:hover {	color: white;	}
+}
+
+.no-touch .nl-dd ul li:hover {
+	background: rgba(0,0,0,0.05);
+}
+
+.no-touch .nl-dd ul li:hover:active {
+	color: #478982;
+}
+
+
+.nl-ti-text ul {
+	min-width: 8em;
+}
+
+.nl-ti-text ul li.nl-ti-input input {
+	width: 100%;
+	padding: 0.2em 2em 0.2em 0.5em;
+	border-bottom: none;
+	color: #fff;
+}
+
+.nl-form .nl-field-go {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	cursor: pointer;
+	border: 1px solid white;
+	text-align: center;
+	color: transparent;
+	font-size: 0;
+	min-width: 36px;
+}
+
+.nl-field-go:before {
+	content: "\2713";
+	font-size: 16px;
+	color: #fff;
+	width: 100%;
+	line-height: 2.5;
+	display: block;
+}
+
+/* custom placeholder color */
+input::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.5);
+}
+
+input:active::-webkit-input-placeholder ,
+input:focus::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.2);
+}
+
+input::-moz-placeholder {
+	color: rgba(255,255,255,0.5);
+}
+
+input:active::-moz-placeholder,
+input:focus::-moz-placeholder {
+	color: rgba(255,255,255,0.2);
+}
+
+input:-ms-input-placeholder {  
+	color: rgba(255,255,255,0.5);
+}
+
+input:active::-ms-input-placeholder ,
+input:focus::-ms-input-placeholder {
+	color: rgba(255,255,255,0.2);
+}
+
+/* example field below text input */
+.nl-ti-text ul li.nl-ti-example { display: none; }
+
+
+/* submit button */
+.nl-submit-wrap {
+	margin-top: 0.4em;
+}
+
+.nl-submit {
+	border: 1px solid white;
+	font-size: 1em;
+	padding: .5em 1em;
+	color: $yellow;
+	margin: 1.333em 0;
+	background: none;
+	font-size: 1.333em;
+	transition: all $short ease;
+}
+
+
+.nl-submit:hover,
+.nl-submit:active {
+	// background: $m-green;
+	transform: scale(1.075);
+}
+
+
+.nl-field.nl-field-open ~ .nl-overlay {
+	opacity: 1;
+	visibility: visible;
+	transition-delay: 0s;
+}
